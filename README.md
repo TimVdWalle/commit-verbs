@@ -8,8 +8,8 @@
 🔒 Fix security  
 🚑 Hotfix  
 🚚 Move  
-⚡️ Optimize
-🎨 Refactor   
+⚡️ Optimize  
+🎨 Refactor  
 🔥 Remove  
 ⏪ Revert  
 🎉 Start  
