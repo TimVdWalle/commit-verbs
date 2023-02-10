@@ -1,10 +1,10 @@
 # commit-verbs
 
 ✨ Add  
-🐛 Bugfix
-🚀 Deploy
-📝 Doc
-⬇️ Downgrade   
+🐛 Bugfix  
+🚀 Deploy  
+📝 Doc  
+⬇️ Downgrade  
 🔒 Fix security  
 🚑 Hotfix  
 🚚 Move  
