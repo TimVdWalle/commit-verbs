@@ -1,21 +1,21 @@
 # commit-verbs
 
-⚡️ Optimize  
-🎨 Refactor  
-🔥 Remove  
-🐛 Bugfix  
-🚑 Hotfix  
 ✨ Add  
-📝 Doc  
-🚀 Deploy  
-💄 Update UI  
-🎉 Start  
+🐛 Bugfix
+🚀 Deploy
+📝 Doc
+⬇️ Downgrade   
 🔒 Fix security  
-🚧 WIP  
-⬇️ Downgrade  
-⬆️ Upgrade  
-✏️ Typo  
-⏪ Revert  
+🚑 Hotfix  
 🚚 Move  
+⚡️ Optimize
+🎨 Refactor   
+🔥 Remove  
+⏪ Revert  
+🎉 Start  
+✏️ Typo  
 💡 Update comment  
 💬 Update copy  
+💄 Update UI  
+⬆️ Upgrade  
+🚧 WIP  
