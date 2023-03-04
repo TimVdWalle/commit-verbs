@@ -1,5 +1,8 @@
 # commit-verbs
 
+🎉 Initial commit
+    
+
 ✨ Add  
 🐛 Bugfix  
 🚀 Deploy  
