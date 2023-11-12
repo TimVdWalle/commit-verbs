@@ -1,0 +1,56 @@
+#!/bin/zsh
+
+## copy file to .git/hooks/prepare-commit-msg
+## chmod + x <file> to make it executable
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+# Read the first word of the commit message and capitalize it
+FIRST_WORD=$(head -n1 $COMMIT_MSG_FILE | awk '{print toupper(substr($1,1,1)) tolower(substr($1,2));}')
+
+# Create an associative array for emojis with the first word included
+typeset -A emoji_map
+emoji_map=(
+    "Initial" "🎉 First commit"
+    "Start" "🎉 First commit"
+    "First_commit" "🎉 First commit"
+    "Firstcommit" "🎉 First commit"
+    "Add" "✨ Add"
+    "Bugfix" "🐛 Bugfix"
+    "Clean" "🧹 Clean"
+    "Configure" "⚙️ Configure"
+    "Deploy" "🚀 Deploy"
+    "Document" "📝 Document"
+    "Downgrade" "⬇️ Downgrade"
+    "Experiment" "🧪 Experiment"
+    "Expand" "📈 Expand"
+    "Hotfix" "🚑 Hotfix"
+    "Localize" "🌍 Localize"
+    "Move" "🚚 Move"
+    "Optimize" "⚡️ Optimize"
+    "Refactor" "🔨 Refactor"
+    "Remove" "🔥 Remove"
+    "Revert" "⏪ Revert"
+    "Secure" "🔒 Secure"
+    "Style" "💅 Style"
+    "Test" "🧪 Test"
+    "Typo" "✏️ Typo"
+    "Update" "🌟 Update"
+    "Updateui" " 🎨 Update UI"
+    "Update_ui" " 🎨 Update UI"
+    "Update_comment" "💡 Update comment"
+    "Updatecomment" "💡 Update comment"
+    "Update_copy" "💬 Update copy"
+    "Updatecopy" "💬 Update copy"
+    "Upgrade" "⬆️ Upgrade"
+    "Tag" "🔖 Tag"
+    "WIP" "🚧 WIP"
+)
+
+# Check if the first word is in the map
+if [[ ${emoji_map[$FIRST_WORD]} ]]; then
+    # Prepend the emoji and the first word to the commit message
+    sed -i '' "1s/^/${emoji_map[$FIRST_WORD]} /" $COMMIT_MSG_FILE
+fi
