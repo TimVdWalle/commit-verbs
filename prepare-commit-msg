@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-## copy file to .git/hooks/prepare-commit-msg
-## chmod + x <file> to make it executable
-
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
 SHA1=$3
@@ -18,7 +15,6 @@ emoji_map=(
     "First_commit" "🎉 First commit"
     "Firstcommit" "🎉 First commit"
     "Add" "✨ Add"
-    "Bugfix" "🐛 Bugfix"
     "Clean" "🧹 Clean"
     "Configure" "⚙️ Configure"
     "Deploy" "🚀 Deploy"
@@ -26,6 +22,9 @@ emoji_map=(
     "Downgrade" "⬇️ Downgrade"
     "Experiment" "🧪 Experiment"
     "Expand" "📈 Expand"
+    "Fix" "🕸️ Fix bug"
+    "Fixbug" "🕸 Fix bug"
+    "Fix_bug" "🕸️ Fix bug"
     "Hotfix" "🚑 Hotfix"
     "Localize" "🌍 Localize"
     "Move" "🚚 Move"
@@ -51,6 +50,6 @@ emoji_map=(
 
 # Check if the first word is in the map
 if [[ ${emoji_map[$FIRST_WORD]} ]]; then
-    # Prepend the emoji and the first word to the commit message
-    sed -i '' "1s/^/${emoji_map[$FIRST_WORD]} /" $COMMIT_MSG_FILE
+    # Replace the first word with the corresponding emoji and description
+    sed -i '' "1s/^[^ ]* */${emoji_map[$FIRST_WORD]} /" $COMMIT_MSG_FILE
 fi
